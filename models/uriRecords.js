@@ -4,10 +4,7 @@ const mongoose = require('mongoose'),
       Schema = mongoose.Schema,
       autoInc = require('mongoose-auto-increment');
 
-mongoose
-  .connect(process.env.MONGODBATLAS_URI)
-  .catch(error => console.log(error));
-
+//initialise mongo
 autoInc.initialize(mongoose.connection);
 
 const UriRecords = new Schema ({
