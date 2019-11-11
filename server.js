@@ -12,6 +12,11 @@ const app = express();
 // Basic Configuration
 const port = process.env.PORT || 3000;
 
+///connect to db
+mongoose
+  .connect(process.env.MONGODBATLAS_URI)
+  .catch(error => console.log(error));
+//user cors
 app.use(cors());
 
 //Mount parser to process POST bodies
